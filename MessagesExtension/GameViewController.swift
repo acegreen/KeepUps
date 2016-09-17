@@ -149,6 +149,10 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
         }
     }
     
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        gameSceneDelegate?.gameVCWillRotate(to: toInterfaceOrientation)
+    }
+    
     // MARK:- Helpers
     func composeMessage(customMessage: String, caption: String, subCaption: String?) -> MSMessage {
         var components = URLComponents()

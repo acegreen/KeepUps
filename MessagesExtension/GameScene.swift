@@ -12,6 +12,7 @@ import Messages
 
 protocol GameSceneDelegate {
     func gameVCWillTransition(to presentationStyle: MSMessagesAppPresentationStyle)
+    func gameVCWillRotate(to toInterfaceOrientation: UIInterfaceOrientation)
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
@@ -53,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
         
         // Setup environment
         self.ball = childNode(withName: SpriteType.BallCategoryName) as! SKSpriteNode
-        self.ball.position = CGPoint(x: self.view!.frame.midX, y: (self.ball.size.height / 2) + 50)
+        centerBall()
         
         // Add generic scene boundaries
 //        let bottom = SKNode()
@@ -197,5 +198,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
             
             //gameState.enter(Playing.self)
         }
+    }
+    
+    func gameVCWillRotate(to toInterfaceOrientation: UIInterfaceOrientation) {
+        print("VC rotated")
+    }
+    
+    // Helper functions
+    func centerBall() {
+        self.ball.position = CGPoint(x: self.view!.frame.midX, y: (self.ball.size.height / 2) + 50)
     }
 }
