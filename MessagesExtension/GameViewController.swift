@@ -22,6 +22,10 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
     @IBOutlet var highScoreLabel: UILabel!
     @IBOutlet var currentScoreLabel: UILabel!
     
+    @IBOutlet var currentScoreLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet var currentScoreLabelTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var currentScoreLabelCenterContraint: NSLayoutConstraint!
+    
     var gameSceneDelegate: GameSceneDelegate?
     
     override func viewDidLoad() {
@@ -127,12 +131,22 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        gameSceneDelegate?.gameVCWillTransition(to: presentationStyle)
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called after the extension transitions to a new presentation style.
-    
+
+        gameSceneDelegate?.gameVCWillTransition(to: presentationStyle)
+        
+        switch presentationStyle {
+        case .compact:
+            currentScoreLabelTopConstraint.constant = 15
+            currentScoreLabelTrailingConstraint.isActive = true
+            currentScoreLabelCenterContraint.isActive = false
+        case .expanded:
+            currentScoreLabelTopConstraint.constant = 70
+            currentScoreLabelTrailingConstraint.isActive = false
+            currentScoreLabelCenterContraint.isActive = true
+        }
     }
     
     // MARK:- Helpers
