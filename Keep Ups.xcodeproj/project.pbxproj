@@ -20,6 +20,7 @@
 		23119AE81D8C46BB002F41E5 /* WaitingForTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23119AE51D8C46BB002F41E5 /* WaitingForTap.swift */; };
 		23119AEA1D8C47FC002F41E5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23119AE91D8C47FC002F41E5 /* GameScene.swift */; };
 		231CCFB71D8C8B8D0079EA06 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231CCFB61D8C8B8D0079EA06 /* Game.swift */; };
+		23944DC21D8DDE9F00B0CC19 /* timenormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23944DC01D8DDE9800B0CC19 /* timenormal.ttf */; };
 		23E7356E1D8D65D0008372BD /* game-over.wav in Resources */ = {isa = PBXBuildFile; fileRef = 23E735681D8D65BF008372BD /* game-over.wav */; };
 		23E7356F1D8D65D0008372BD /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 23E735691D8D65BF008372BD /* kick.wav */; };
 		23E735701D8D65D0008372BD /* whistle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 23E7356A1D8D65BF008372BD /* whistle.wav */; };
@@ -65,6 +66,7 @@
 		23119AE51D8C46BB002F41E5 /* WaitingForTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingForTap.swift; sourceTree = "<group>"; };
 		23119AE91D8C47FC002F41E5 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		231CCFB61D8C8B8D0079EA06 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		23944DC01D8DDE9800B0CC19 /* timenormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timenormal.ttf; sourceTree = "<group>"; };
 		23E735681D8D65BF008372BD /* game-over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-over.wav"; sourceTree = "<group>"; };
 		23E735691D8D65BF008372BD /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick.wav; sourceTree = "<group>"; };
 		23E7356A1D8D65BF008372BD /* whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whistle.wav; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		23119AD41D8C3C2A002F41E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				23944DBF1D8DDE9800B0CC19 /* Fonts */,
 				23E735671D8D65BF008372BD /* Sounds */,
 			);
 			path = Resources;
@@ -158,6 +161,14 @@
 				231CCFB61D8C8B8D0079EA06 /* Game.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		23944DBF1D8DDE9800B0CC19 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				23944DC01D8DDE9800B0CC19 /* timenormal.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		23E735671D8D65BF008372BD /* Sounds */ = {
@@ -268,6 +279,7 @@
 				23119AE11D8C44F9002F41E5 /* GameScene.sks in Resources */,
 				23E7356F1D8D65D0008372BD /* kick.wav in Resources */,
 				23E735701D8D65D0008372BD /* whistle.wav in Resources */,
+				23944DC21D8DDE9F00B0CC19 /* timenormal.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
