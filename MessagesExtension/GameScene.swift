@@ -83,7 +83,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
         // Assign contactDelegate
         physicsWorld.contactDelegate = self
         
-        // Update score & Enter waiting state
         gameState.enter(WaitingForTap.self)
     }
     
@@ -179,6 +178,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
     
     // GameSceneDelegate
     func gameVCWillTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        
         switch presentationStyle {
         case .compact:
             
@@ -192,7 +192,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
             }
             
         case .expanded:
-            gameState.enter(Playing.self)
+            
+            print("expannded")
+            
+            //gameState.enter(Playing.self)
         }
     }
 }

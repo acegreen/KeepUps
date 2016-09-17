@@ -30,7 +30,7 @@ class GameOver: GKState {
         scene.run(scene.gameOverSound)
     }
     
-    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is WaitingForTap.Type
-    }
+//    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+//        return stateClass is WaitingForTap.Type
+//    }
 }
