@@ -12,7 +12,7 @@ import Messages
 
 protocol GameSceneDelegate {
     func gameVCWillTransition(to presentationStyle: MSMessagesAppPresentationStyle)
-    func gameVCWillRotate(to toInterfaceOrientation: UIInterfaceOrientation)
+    func gameVCWillTansition(to size: CGSize)
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
@@ -200,8 +200,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
         }
     }
     
-    func gameVCWillRotate(to toInterfaceOrientation: UIInterfaceOrientation) {
-        print("VC rotated")
+    func gameVCWillTansition(to size: CGSize) {
+        print("VC Size", size)
     }
     
     // Helper functions

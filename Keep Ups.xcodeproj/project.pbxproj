@@ -13,9 +13,6 @@
 		23119AC41D8C3A52002F41E5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23119AC31D8C3A52002F41E5 /* GameViewController.swift */; };
 		23119AC71D8C3A52002F41E5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23119AC51D8C3A52002F41E5 /* MainInterface.storyboard */; };
 		23119AC91D8C3A53002F41E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23119AC81D8C3A53002F41E5 /* Assets.xcassets */; };
-		23119ADA1D8C3C2A002F41E5 /* KaushanScript.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23119AD61D8C3C2A002F41E5 /* KaushanScript.ttf */; };
-		23119ADC1D8C3C2A002F41E5 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23119AD71D8C3C2A002F41E5 /* Lato-Light.ttf */; };
-		23119ADE1D8C3C2A002F41E5 /* timenormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23119AD81D8C3C2A002F41E5 /* timenormal.ttf */; };
 		23119AE01D8C44F9002F41E5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23119ADF1D8C44F9002F41E5 /* GameScene.sks */; };
 		23119AE11D8C44F9002F41E5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23119ADF1D8C44F9002F41E5 /* GameScene.sks */; };
 		23119AE61D8C46BB002F41E5 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23119AE31D8C46BB002F41E5 /* GameOver.swift */; };
@@ -62,9 +59,6 @@
 		23119AC61D8C3A52002F41E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		23119AC81D8C3A53002F41E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23119ACA1D8C3A53002F41E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23119AD61D8C3C2A002F41E5 /* KaushanScript.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KaushanScript.ttf; sourceTree = "<group>"; };
-		23119AD71D8C3C2A002F41E5 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		23119AD81D8C3C2A002F41E5 /* timenormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timenormal.ttf; sourceTree = "<group>"; };
 		23119ADF1D8C44F9002F41E5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		23119AE31D8C46BB002F41E5 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		23119AE41D8C46BB002F41E5 /* Playing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playing.swift; sourceTree = "<group>"; };
@@ -143,20 +137,9 @@
 		23119AD41D8C3C2A002F41E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				23119AD51D8C3C2A002F41E5 /* Fonts */,
 				23E735671D8D65BF008372BD /* Sounds */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		23119AD51D8C3C2A002F41E5 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				23119AD61D8C3C2A002F41E5 /* KaushanScript.ttf */,
-				23119AD71D8C3C2A002F41E5 /* Lato-Light.ttf */,
-				23119AD81D8C3C2A002F41E5 /* timenormal.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		23119AE21D8C46BB002F41E5 /* Game States */ = {
@@ -282,11 +265,8 @@
 				23119AC91D8C3A53002F41E5 /* Assets.xcassets in Resources */,
 				23119AC71D8C3A52002F41E5 /* MainInterface.storyboard in Resources */,
 				23E7356E1D8D65D0008372BD /* game-over.wav in Resources */,
-				23119ADA1D8C3C2A002F41E5 /* KaushanScript.ttf in Resources */,
-				23119ADC1D8C3C2A002F41E5 /* Lato-Light.ttf in Resources */,
 				23119AE11D8C44F9002F41E5 /* GameScene.sks in Resources */,
 				23E7356F1D8D65D0008372BD /* kick.wav in Resources */,
-				23119ADE1D8C3C2A002F41E5 /* timenormal.ttf in Resources */,
 				23E735701D8D65D0008372BD /* whistle.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

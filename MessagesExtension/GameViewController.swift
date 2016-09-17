@@ -149,8 +149,8 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
         }
     }
     
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        gameSceneDelegate?.gameVCWillRotate(to: toInterfaceOrientation)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        gameSceneDelegate?.gameVCWillTansition(to: size)
     }
     
     // MARK:- Helpers
