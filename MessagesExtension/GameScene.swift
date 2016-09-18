@@ -106,7 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
             
                     print(touchLocationX, ballCenterX, xDifference)
                     
-                    let impulseBall = CGVector(dx: (xDifference * 10), dy: 1000)
+                    let impulseBall = CGVector(dx: (xDifference * 10), dy: self.view!.frame.height)
                     
                     print("Began touch on ball")
                     

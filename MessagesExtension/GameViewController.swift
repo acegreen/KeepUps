@@ -128,7 +128,7 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-
+        
         gameSceneDelegate?.gameVCWillTransition(to: presentationStyle)
         
         let skView = self.view as! SKView
