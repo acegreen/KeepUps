@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  MessagesExtension
+//  Keep Ups
 //
 //  Created by Ace Green on 9/16/16.
 //  Copyright © 2016 Ace Green. All rights reserved.
@@ -10,14 +10,14 @@ import UIKit
 import SpriteKit
 import Messages
 
-protocol GameDelegate {
+protocol GameVCDelegate {
     func updateScore(game: Game)
     func gameOver(game: Game)
     func expandView()
     func resetScene(scene: GameScene)
 }
 
-class GameViewController: MSMessagesAppViewController, GameDelegate {
+class GameViewController: MSMessagesAppViewController, GameVCDelegate {
     
     @IBOutlet var highScoreLabel: UILabel!
     
@@ -63,7 +63,7 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
     
     func resetScene(scene: GameScene) {
         self.gameSceneDelegate = scene
-        scene.gameDelegate = self
+        scene.gameVCDelegate = self
     }
     
 //    override func shouldAutorotate() -> Bool {
@@ -179,7 +179,7 @@ class GameViewController: MSMessagesAppViewController, GameDelegate {
                 /* Set the scale mode to scale to fit the window */
                 scene.scaleMode = .resizeFill
                 self.gameSceneDelegate = scene
-                scene.gameDelegate = self
+                scene.gameVCDelegate = self
                 
                 skView.presentScene(scene)
             }

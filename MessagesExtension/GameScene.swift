@@ -1,9 +1,9 @@
 //
 //  GameScene.swift
-//  Bamboo Breakout
+//  Keep Ups
 //
-//  Created by Michael Briscoe on 4/8/16.
-//  Copyright (c) 2016 Razeware LLC. All rights reserved.
+//  Created by Ace Green on 9/16/16.
+//  Copyright © 2016 Ace Green. All rights reserved.
 //
 
 import SpriteKit
@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
     let gameOverSound = SKAction.playSoundFileNamed("game-over", waitForCompletion: false)
     let kickSound = SKAction.playSoundFileNamed("kick", waitForCompletion: false)
     
-    var gameDelegate: GameDelegate?
+    var gameVCDelegate: GameVCDelegate?
     
     var ball: SKSpriteNode!
     
@@ -95,7 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
         switch gameState.currentState {
         case is Playing:
             
-            gameDelegate?.updateScore(game: self.game)
+            gameVCDelegate?.updateScore(game: self.game)
         
             if let body = physicsWorld.body(at: touchLocation) {
                 if body.node! == self.ball {
@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
                     
                     // Increment score
                     self.game.currentScore += 1
-                    gameDelegate?.updateScore(game: self.game)
+                    gameVCDelegate?.updateScore(game: self.game)
                 }
             }
             
@@ -132,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
                 let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
                 self.view?.presentScene(newScene, transition: reveal)
                 
-                gameDelegate?.resetScene(scene: newScene)
+                gameVCDelegate?.resetScene(scene: newScene)
             }
             
         default:
@@ -147,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneDelegate {
             if !self.gameOver {
                 gameState.enter(GameOver.self)
                 gameOver = true
-                gameDelegate?.gameOver(game: self.game)
+                gameVCDelegate?.gameOver(game: self.game)
             }
         }
     }
