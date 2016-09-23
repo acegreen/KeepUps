@@ -42,6 +42,13 @@ class GameViewController: MSMessagesAppViewController, GameVCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Workaround for when view is already expanded
+        setupScene(presentationStyle: self.presentationStyle)
+    }
 
     func updateScore(game: Game) {
         currentScoreLabel.text = String(game.currentScore)
@@ -125,11 +132,23 @@ class GameViewController: MSMessagesAppViewController, GameVCDelegate {
     }
     
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+   
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         
         gameSceneDelegate?.gameVCWillTransition(to: presentationStyle)
+        
+        setupScene(presentationStyle: presentationStyle)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        gameSceneDelegate?.gameVCWillTansition(to: size)
+    }
+    
+    // MARK:- Helpers
+    
+    func setupScene(presentationStyle: MSMessagesAppPresentationStyle) {
         
         let skView = self.view as! SKView
         
@@ -166,12 +185,12 @@ class GameViewController: MSMessagesAppViewController, GameVCDelegate {
                 // Configure the view.
                 
                 // DEBUG Tools
-//                #if DEBUG
-//                    skView.showsPhysics = true
-//                    skView.showsFPS = true
-//                    skView.showsNodeCount = true
-//                #else
-//                #endif
+                //                #if DEBUG
+                //                    skView.showsPhysics = true
+                //                    skView.showsFPS = true
+                //                    skView.showsNodeCount = true
+                //                #else
+                //                #endif
                 
                 /* Sprite Kit applies additional optimizations to improve rendering performance */
                 skView.ignoresSiblingOrder = true
@@ -186,11 +205,6 @@ class GameViewController: MSMessagesAppViewController, GameVCDelegate {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        gameSceneDelegate?.gameVCWillTansition(to: size)
-    }
-    
-    // MARK:- Helpers
     func composeMessage(customMessage: String, caption: String, subCaption: String?) -> MSMessage {
         var components = URLComponents()
         
